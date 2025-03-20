@@ -50,6 +50,9 @@ header{
     }
 }
 
+.main{
+    background-color: #e1dbdb
+}
 .main__banner{
     @extend %withAndTextAling;
     padding: 60px 0;

@@ -37,6 +37,10 @@ header .header__icon .header__icon-img {
   width: 100%;
 }
 
+.main {
+  background-color: #e1dbdb;
+}
+
 .main__banner {
   padding: 60px 0;
   background-image: url("../img/imagen_banner.png");
