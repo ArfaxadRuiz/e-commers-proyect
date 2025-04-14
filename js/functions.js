@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const carritoRight = carrito.style.right;
 
         if (carritoRight === "0px" || carritoRight === "0") {
-            carrito.style.right = "-100%"; // Ocultar
+            carrito.style.right = "-200%"; // Ocultar
             console.log("Carrito ocultado");
         } else {
             carrito.style.right = "0"; // Mostrar
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     btnMenu.addEventListener("click", function () {
         const menuLeft = menu.style.left;
         if (menuLeft === "0px" || menuLeft === "0") {
-            menu.style.left = "-100%";
+            menu.style.left = "-200%";
             console.log("Menú ocultado");
         } else {
             menu.style.left = "0";
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     btnCerrarMenu.addEventListener("click", function () {
-        menu.style.left = "-100%";
+        menu.style.left = "-200%";
         console.log("Menú cerrado");
     });
 
@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
     
             carrito.appendChild(productoCarrito);
+            actualizarContadorCarrito();
 
             console.log(`Producto insertado: ${nombre}`);
         });
@@ -71,7 +72,15 @@ document.addEventListener("DOMContentLoaded", function () {
             if (productoAEliminar) {
                 productoAEliminar.remove();
                 console.log("Producto eliminado del carrito");
+                actualizarContadorCarrito();
             }
         }
     });
+
+    function actualizarContadorCarrito() {
+        const productos = carrito.querySelectorAll(".main__carr--product");
+        const contador = document.getElementById("carritoContador");
+    
+        contador.textContent = productos.length;
+    }
 });

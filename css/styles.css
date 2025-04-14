@@ -40,6 +40,22 @@ header .header__icon {
 header .header__icon .header__icon-img {
   width: 100%;
 }
+header .carrito__contador {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  z-index: 1000;
+}
+header #btnCarrito {
+  cursor: pointer;
+  position: relative;
+}
 
 .main {
   background-color: #e1dbdb;
@@ -93,8 +109,12 @@ header .header__icon .header__icon-img {
   text-align: center;
 }
 .main .main__products .main__products--product .main-products__product--img {
-  width: 200px;
+  width: 15rem;
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-bottom: 15px;
+  border-radius: 8px;
 }
 .main .main__products .main__products--product .main-products__product--title {
   font-weight: 500;
@@ -113,7 +133,7 @@ header .header__icon .header__icon-img {
   box-sizing: border-box;
   height: 100%;
   position: fixed;
-  right: -100%;
+  right: -200%;
   top: 100px;
   box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
   z-index: 999;
@@ -155,7 +175,7 @@ header .header__icon .header__icon-img {
   box-sizing: border-box;
   height: 100%;
   position: fixed;
-  left: -100%;
+  left: -200%;
   top: 100px;
   box-shadow: 19px -1px 22px -15px rgba(0, 0, 0, 0.3);
   transition: left 0.3s ease;

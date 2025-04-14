@@ -52,6 +52,25 @@ header{
             width: 100%;
         }
     }
+
+    .carrito__contador {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: red;
+        color: white;
+        font-size: 0.75rem;
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 50%;
+        z-index: 1000;
+    }
+
+    #btnCarrito {
+        cursor: pointer;
+        position: relative;
+      }
+
 }
 
 .main{
@@ -111,8 +130,11 @@ header{
             text-align: center;
     
             .main-products__product--img{
-                width: 200px;
+                width: 15rem;
+                height: 15rem; // Establece una altura fija también
+                object-fit: cover; // Para que se recorte y rellene bien el espacio
                 margin-bottom: 15px;
+                border-radius: 8px; // Opcional: redondea bordes para mejor presentación
             }
         
             .main-products__product--title{
@@ -134,7 +156,7 @@ header{
         box-sizing: border-box;
         height: 100%;
         position: fixed;
-        right: -100%;
+        right: -200%;
         top: 100px;
         box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.30);
         z-index: 999;
@@ -183,7 +205,7 @@ header{
         box-sizing: border-box;
         height: 100%;
         position: fixed;
-        left: -100%; // Oculto al principio
+        left: -200%; // Oculto al principio
         top: 100px;
         box-shadow: 19px -1px 22px -15px rgba(0, 0, 0, 0.30);
         transition: left 0.3s ease;
