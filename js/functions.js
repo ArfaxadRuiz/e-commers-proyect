@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const menu = document.querySelector(".main__rightMenu");
     const btnCerrarMenu = document.querySelector(".main__rightMenu--close");
 
+    const botonesAgregar = document.querySelectorAll('.main__products--product-btn');
+
     btnCarrito.addEventListener("click", function () {
         // Verificamos si el carrito está visible
         const carritoRight = carrito.style.right;
@@ -34,5 +36,42 @@ document.addEventListener("DOMContentLoaded", function () {
     btnCerrarMenu.addEventListener("click", function () {
         menu.style.left = "-100%";
         console.log("Menú cerrado");
+    });
+
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener('click', function () {
+            const producto = this.closest('.main__products--product');
+            const nombre = producto.querySelector('.main-products__product--title').textContent;
+            const talla = producto.querySelector('.main-products__product--size').textContent;
+            const precio = producto.querySelector('.main-products__product--price').textContent;
+            const imagen = producto.querySelector('.main-products__product--img').getAttribute('src');
+
+            const productoCarrito = document.createElement('div');
+            productoCarrito.classList.add('main__carr--product');
+
+            productoCarrito.innerHTML = `
+                <img src="${imagen}" alt="" class="main__carr__product--img">
+                <p class="main__carr__product--title">${nombre}</p>
+                <p class="main__carr__product--size">${talla}</p>
+                <p class="main__carr__product--price">${precio}</p>
+                <i class="main__carr--deleted--icone">
+                    <img src="img/icono_quitar.png" alt="Icono Quitar" class="main__carr--deleted--img">
+                </i>
+            `;
+    
+            carrito.appendChild(productoCarrito);
+
+            console.log(`Producto insertado: ${nombre}`);
+        });
+    });
+
+    carrito.addEventListener('click', function (event) {
+        if (event.target.classList.contains('main__carr--deleted--img')) {
+            const productoAEliminar = event.target.closest('.main__carr--product');
+            if (productoAEliminar) {
+                productoAEliminar.remove();
+                console.log("Producto eliminado del carrito");
+            }
+        }
     });
 });
