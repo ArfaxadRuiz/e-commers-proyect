@@ -1,7 +1,7 @@
 /* ----- Variables ----- */
 /* ----- mixins ----- */
 /* ----- extend ----- */
-.main .main__carr .main__carr--title, .main .main__banner {
+.main .main__rightMenu .main__rightMenu--title, .main .main__carr .main__carr--title, .main .main__banner {
   width: 100%;
   text-align: center;
 }
@@ -72,6 +72,22 @@ header .header__icon .header__icon-img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+.main .main__products .main__products--product-btn {
+  background-color: #3bbd57;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 50%;
+}
+.main .main__products .main__products--product-btn:hover {
+  background-color: #2f9645;
+}
 .main .main__products .main__products--product {
   cursor: pointer;
   text-align: center;
@@ -131,6 +147,39 @@ header .header__icon .header__icon-img {
 }
 .main .main__carr .main__carr--product .main__carr--deleted--img {
   width: 100%;
+}
+.main .main__rightMenu {
+  width: 500px;
+  background-color: #fff;
+  padding: 25px;
+  box-sizing: border-box;
+  height: 100%;
+  position: fixed;
+  left: -100%;
+  top: 100px;
+  box-shadow: 19px -1px 22px -15px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+.main .main__rightMenu .main__rightMenu--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .main__rightMenu .main__rightMenu--title {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 25px 0;
+}
+.main .main__rightMenu .main__rightMenu--close {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.main .main__rightMenu .main__rightMenu--close .main__rightMenu--close-img {
+  width: 20px;
+  height: 20px;
 }
 
 /* ----- Media para tablets ----- */

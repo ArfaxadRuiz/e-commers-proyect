@@ -87,6 +87,24 @@ header{
         box-sizing: border-box;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+        .main__products--product-btn {
+            background-color: $headerColor; // Color de fondo del botón (puedes cambiarlo)
+            color: $whiteColor; // Color del texto
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 15px; // Separación entre el precio y el botón
+            margin-bottom: 15px;
+            width: 50%; // Hace que el botón ocupe todo el ancho del artículo
+        
+            &:hover {
+                background-color: darken($headerColor, 10%); // Cambio de color al pasar el ratón por encima
+            }
+        }
     
         .main__products--product{
             cursor: pointer;
@@ -154,6 +172,45 @@ header{
             
             .main__carr--deleted--img{
                 width: 100%;
+            }
+        }
+    }
+
+    .main__rightMenu {
+        width: 500px;
+        background-color: $whiteColor;
+        padding: 25px;
+        box-sizing: border-box;
+        height: 100%;
+        position: fixed;
+        left: -100%; // Oculto al principio
+        top: 100px;
+        box-shadow: 19px -1px 22px -15px rgba(0, 0, 0, 0.30);
+        transition: left 0.3s ease;
+        z-index: 999;
+    
+        // Usamos flex para alinear el título y el botón
+        .main__rightMenu--header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main__rightMenu--title {
+            @extend %withAndTextAling;
+            @include fontWeightAndSize(600, 20px);
+            padding: 25px 0;
+        }
+
+        .main__rightMenu--close {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+
+            .main__rightMenu--close-img {
+                width: 20px; // Tamaño pequeño de la imagen
+                height: 20px;
             }
         }
     }
