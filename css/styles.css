@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+#btnCarrito {
+  cursor: pointer;
+}
+
 body {
   width: 100%;
   font-weight: 300;
@@ -96,6 +100,10 @@ header .header__icon .header__icon-img {
   right: -100%;
   top: 100px;
   box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+.main .main__carr .main__carr--show {
+  right: 0;
 }
 .main .main__carr .main__carr--title {
   font-weight: 600;

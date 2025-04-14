@@ -19,6 +19,10 @@ $fontType: "Lexend", Arial, Helvetica, sans-serif;
     text-align: center;
 }
 
+#btnCarrito {
+    cursor: pointer;
+  }
+
 body{
     width: 100%;
     @include fontWeightAndSize(300,15px);
@@ -115,6 +119,11 @@ header{
         right: -100%;
         top: 100px;
         box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.30);
+        z-index: 999;
+
+        .main__carr--show {
+            right: 0;
+        }
     
         .main__carr--title{
             @extend %withAndTextAling;
