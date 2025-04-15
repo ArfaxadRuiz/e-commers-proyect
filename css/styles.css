@@ -141,6 +141,12 @@ header #btnCarrito {
 .main .main__carr .main__carr--content {
   max-height: 100%;
   overflow-y: auto;
+  position: relative;
+}
+.main .main__carr .main__carr--content::after {
+  content: "";
+  display: block;
+  height: 60px;
 }
 .main .main__carr .main__carr--content .main__carr--product {
   margin-bottom: 15px;
