@@ -9,6 +9,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const botonesAgregar = document.querySelectorAll('.main__products--product-btn');
 
+    let contenedorProductos = carrito.querySelector(".main__carr--content");
+    if (!contenedorProductos) {
+        contenedorProductos = document.createElement("div");
+        contenedorProductos.classList.add("main__carr--content");
+
+        // Mover todos los productos actuales al contenedor
+        const productosActuales = carrito.querySelectorAll(".main__carr--product");
+        productosActuales.forEach(prod => contenedorProductos.appendChild(prod));
+
+        // Insertar el contenedor justo después del título
+        const titulo = carrito.querySelector(".main__carr--title");
+        carrito.insertBefore(contenedorProductos, titulo.nextSibling);
+    }
+
     btnCarrito.addEventListener("click", function () {
         // Verificamos si el carrito está visible
         const carritoRight = carrito.style.right;
@@ -59,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </i>
             `;
     
-            carrito.appendChild(productoCarrito);
+            contenedorProductos.appendChild(productoCarrito);
             actualizarContadorCarrito();
 
             console.log(`Producto insertado: ${nombre}`);

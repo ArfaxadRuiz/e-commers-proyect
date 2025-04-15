@@ -131,12 +131,19 @@ header #btnCarrito {
   background-color: #fff;
   padding: 25px;
   box-sizing: border-box;
-  height: 100%;
+  height: calc(100vh - 100px);
   position: fixed;
   right: -200%;
   top: 100px;
   box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
   z-index: 999;
+}
+.main .main__carr .main__carr--content {
+  max-height: 100%;
+  overflow-y: auto;
+}
+.main .main__carr .main__carr--content .main__carr--product {
+  margin-bottom: 15px;
 }
 .main .main__carr .main__carr--show {
   right: 0;
